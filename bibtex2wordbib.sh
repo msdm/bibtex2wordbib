@@ -1,18 +1,53 @@
 #!/bin/bash
 
 #
+# Copyright (c) 2020, msdm
+# https://github.com/msdm/bibtex2wordbib
+# 
+# All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without modification,
+# are permitted provided that the following conditions are met:
+# 
+#     * Redistributions of source code must retain the above copyright notice,
+#       this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright notice,
+#       this list of conditions and the following disclaimer in the documentation
+#       and/or other materials provided with the distribution.
+#     * Neither the name of rhythmdbsync nor the names of its contributors
+#       may be used to endorse or promote products derived from this software
+#       without specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+# PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+# LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
 # bib(la)tex to Microsoft Word Bibliography convertor
 #
-# THIS CODE IS EXPERIMENTAL AND COMES WITH NO WARRANTY.
-#
-# This program relies on every bibtex field is followed by a comma and 
+# This bash script relies on every bibtex field is followed by a comma and 
 # newline (,\n). So, make sure your .bib file is formatted properly
 # (one field per line)
 #
+# This code is written based on ECMA-376 standard
+# (https://www.ecma-international.org/publications/standards/Ecma-376.htm),
+# which defines Microsoft Office XML file format including the bibliography XML.
+# If language field is not set for an item, it will be set to English by 
+# default.
+#
 # Usage: bibtex2wordbib.sh <bibtex file> [<output file>]
+#
 # If output file is not provided, the generated Bibliography XML will be
-# printed in the stdout. Otherwise, it will be written in a file with the provided
-# name. In the latter case, conversion report will be printed in the stdout.
+# printed in the stdout. Otherwise, with writing the generated XML in the file,
+# conversion report will be printed in the stdout.
 
 HELP="Usage: bibtex2wordbib.sh <bibtex file> [<output file>]"
 
