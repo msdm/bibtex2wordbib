@@ -1,6 +1,6 @@
 # bibtex2wordbib
 
-## bibtex/biblatex to Microsoft Word Bibliography convertor
+## bib(la)tex to Microsoft Word Bibliography convertor
 
 This bash script relies on every bibtex field is followed by a comma and newline (,\n). So, make sure your .bib file is formatted properly (one field per line)
 
