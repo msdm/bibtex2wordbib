@@ -2,9 +2,9 @@
 
 ## bib(la)tex to Microsoft Word Bibliography convertor
 
-This bash script relies on every bibtex field is followed by a comma and newline (,\n). So, make sure your .bib file is formatted properly (one field per line)
+This bash script relies on every bibtex field being followed by a comma and newline (,\n). So, make sure your .bib file is formatted properly (one field per line)
 
-This code has been written based on [ECMA-376 standard](https://www.ecma-international.org/publications/standards/Ecma-376.htm), which defines Microsoft Office XML file format including the bibliography XML. If the language field is not set for an item, it will be set to English by default.
+This code supports biblatex fields and has been written based on [ECMA-376 standard](https://www.ecma-international.org/publications/standards/Ecma-376.htm), which defines Microsoft Office XML file format including the bibliography XML. If the language field is not set for an item, it will be set to English by default.
 
 ## Usage
 `bibtex2wordbib.sh <bibtex file> [<output file>]`
